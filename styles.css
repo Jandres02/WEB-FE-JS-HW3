@@ -1,0 +1,97 @@
+
+*{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f9f9f9;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-image: radial-gradient(#e3dede 1px, transparent 1px);
+    background-size: 25px 25px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+header
+{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+}
+
+
+header p{
+    margin-bottom: 25px;
+}
+
+header h1{
+    margin-top: 0px;
+}
+
+
+.topics {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: #f0f0f0 1px solid;
+    margin-bottom: 0px;
+}
+
+.topics ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.topics li a{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.topics li a:hover{
+    background-color: #808080;
+    color:rgb(0, 0, 0);
+}
+
+.definition{
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(187, 187, 187, 0.832);
+    margin: 50px 200px 0px 200px;
+}
+
+.box{
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(187, 187, 187, 0.832);
+     margin: 50px 200px 0px 200px;
+    ;
+}
+
+pre{
+    background-color: #f0f0f0;
+    font-family: "Courier New", Courier, monospace;
+    overflow-x: auto;
+    padding: 25px 0px 0px 15px;
+    border-left: 5px solid #000000;
+    border-radius: 10px;
+}
+
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1px;
+    bottom: 0;
+    margin-top: 20px;
+}

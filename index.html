@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JavaScript Concepts</title>
+</head>
+<body>
+<header>
+    <h1>Fundamentals JavaScript Concepts</h1>
+    <p>Browse and discover some important topics from this amazing programming language</p>
+    <nav class="topics">
+        <ul>
+            <li><a href="#jsasync">JavaScript Async</a></li>
+            <li><a href="#callb">Callback</a></li>
+            <li><a href="#prom">Promise</a></li>
+            <li><a href="#aa">Async Await</a></li>
+            <li><a href="#el">Event Loop</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+    <section class="definition">
+        <p>JavaScript is a programming language that developers use to make web pages 
+            interactive. From updating social media feeds to displaying animations and 
+            interactive maps, JavaScript features can enhance a website's user experience.
+        </p>
+    </section>
+
+    <section class="box" id="jsasync">
+        <h2>JavaScript Async</h2>
+        <p>
+            Asynchronous programming allows certain operations, such as server calls or file uploads,
+            to be performed in a non-blocking manner, that is, without stopping the execution of the
+            rest of the code. This is especially useful in JavaScript, since it is a single-threaded language,
+            meaning that it can execute one thing at a time.
+        </p>
+        <h3>Expample:</h3>
+        <pre>
+            async function myFunction() {
+                return "Hello";
+            }
+
+            myFunction().then(
+                function(value) {myDisplayer(value);},
+                function(error) {myDisplayer(error);}
+            );
+        </pre>
+    </section>
+
+    <section class="box" id="callb">
+        <h2>Callback</h2>
+        <p>
+            A callback function is one that is passed as an argument to 
+            another function to be “called back” at a later time. A function
+            that accepts other functions as arguments is called a High-Order 
+            function, and contains the logic to determine when the callback 
+            function is executed. It is the combination of these two that allows
+            us to extend our functionality.
+        </p>
+        <h3>Expample:</h3>
+        <pre>
+            function myDisplayer(some) {
+                document.getElementById("demo").innerHTML = some;
+                }
+                
+                function myCalculator(num1, num2, myCallback) {
+                let sum = num1 + num2;
+                myCallback(sum);
+                }
+                
+                myCalculator(5, 5, myDisplayer);
+        </pre>
+    </section>
+
+    <section class="box" id="prom">
+        <h2>Promise</h2>
+        <p>
+            A Promise is a proxy for a value that is not necessarily known when the promise is created.
+            It allows you to associate controllers with the eventual success value or failure reason for
+            an asynchronous action. This allows asynchronous methods to return values like synchronous methods:
+            instead of immediately returning the final value, the asynchronous method returns a promise to provide
+            the value at some point in the future.
+        <h3>Expample:</h3>
+        <pre>
+            const myPromise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve("foo");
+                }, 300);
+              });
+              
+              myPromise
+                .then(handleResolvedA, handleRejectedA)
+                .then(handleResolvedB, handleRejectedB)
+                .then(handleResolvedC, handleRejectedC);
+              
+        </pre>
+    </section>
+
+    <section class="box" id="aa">
+        <h2>Async Await</h2>
+        <p>
+            The async function declaration creates a binding of a new async function
+            to a given name. The await keyword is permitted within the function body,
+            enabling asynchronous, promise-based behavior to be written in a cleaner style 
+            and avoiding the need to explicitly configure promise chains.
+        </p>
+        <h3>Expample:</h3>
+        <pre>
+            function resolveAfter2Seconds() {
+                return new Promise((resolve) => {
+                  setTimeout(() => {
+                    resolve('resolved');
+                  }, 2000);
+                });
+              }
+              
+              async function asyncCall() {
+                console.log('calling');
+                const result = await resolveAfter2Seconds();
+                console.log(result);
+               
+              }
+              
+              asyncCall();
+              
+        </pre>
+    </section>
+
+    <section class="box" id="el">
+        <h2>Event Loop</h2>
+        <p>
+            The event loop is a fundamental mechanism in JavaScript that allows asynchronous 
+            execution and handling of non-blocking operations. It is an essential part of the 
+            JavaScript concurrency model and is responsible for handling the execution of functions, 
+            events and callbacks at the appropriate time.
+        </p>
+        <h3>Expample:</h3>
+        <pre>
+            console.log('Inicio');
+
+            setTimeout(() => {
+                console.log('Timeout');
+            }, 0);
+
+            console.log('Medio');
+
+            Promise.resolve().then(() => console.log('Promise'));
+
+            console.log('Fin');
+
+        </pre>
+    </section>
+
+</main>
+
+<footer>
+    <p>JavaScript Concepts by Johan Vergara</p>
+</footer>
+
+</body>
+</html>
